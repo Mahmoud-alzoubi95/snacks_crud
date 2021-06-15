@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'home'%}">HOME</a>
+
+<h3>Delete Snack</h3>
+<form action="" method="post">
+{% csrf_token %}
+<p>Do you want to delete {{snack.title}}</p>
+<input type="submit" value="YES">
+
+</form>
+
+
+{% endblock content %}
