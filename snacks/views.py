@@ -1,5 +1,5 @@
 from snacks.models import Snack
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.shortcuts import render
 
 # from .models import Snack
@@ -19,3 +19,11 @@ class SnackCreateView(CreateView):
     template_name = "Create.html"
     model = Snack
     fields = ["title","discribtion","purchaser"]
+
+
+class SnackUpdateView(UpdateView):
+    template_name = 'update.html'
+    model = Snack
+    fields = ["title","discribtion","purchaser"]
+
+    

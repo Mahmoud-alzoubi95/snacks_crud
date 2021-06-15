@@ -1,9 +1,12 @@
 from django.urls import path
-
-from .views import SnacksListView, SnacksDetailView, SnackCreateView
+from django.urls import reverse_lazy
+from .views import SnacksListView, SnacksDetailView, SnackCreateView, SnackUpdateView
 
 urlpatterns = [
     path('', SnacksListView.as_view(), name="home"),
     path('<int:pk>/', SnacksDetailView.as_view(), name="snacks_detail"),
-    path('create/',SnackCreateView.as_view(),name="Create")
+    path('create/',SnackCreateView.as_view(),name="Create"),
+    path('<int:pk>/update/',SnackUpdateView.as_view(),name="update"),
+    
+
 ]
